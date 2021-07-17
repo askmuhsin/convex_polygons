@@ -17,6 +17,7 @@ class PolygonSequence:
         """
         efficiency of a polygon is defined as area:perimeter ratio.
         """
+        assert len(self), "No Polygons available!"
         argmax, ratio = max(
             [
                 (n, (x.area / x.perimeter))
