@@ -1,3 +1,5 @@
+from polygon import Polygon
+
 class PolygonSequence:
     """
     Given number of vertex for a Polygon, the PolygonSequence class will build all convex polygons upto that size.
@@ -26,11 +28,14 @@ class PolygonSequence:
         return self.seq[argmax]
     
     def __len__(self):
-        return self.n
+        return len(self.seq)
     
     def __getitem__(self, s):
         if isinstance(s, int):
-            if s < 0 or s > self.n:
+            if s < 0:
+                s = len(self) + s
+                
+            if s > self.n:
                 raise IndexError
             else:
                 return self.seq[s]
