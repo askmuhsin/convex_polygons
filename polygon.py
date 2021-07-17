@@ -40,11 +40,11 @@ class Polygon:
         Edges / Vertices (n) - {self.n}
         Circumradius (R)     - {self.r}
         
-        Interior Angle       - {self.interior_angle}
-        Edge Length (s)      - {self.edge_length}
-        Apothem (a)          - {self.apothem}
-        Area                 - {self.area}
-        Perimeter            - {self.perimeter}
+        Interior Angle       - {round(self.interior_angle, 4)}
+        Edge Length (s)      - {round(self.edge_length, 4)}
+        Apothem (a)          - {round(self.apothem, 4)}
+        Area                 - {round(self.area, 4)}
+        Perimeter            - {round(self.perimeter, 4)}
         """
         return summary
     
@@ -55,7 +55,7 @@ class Polygon:
         if isinstance(other, Polygon):
             return self.n == other.n and self.r == other.r
         else:
-            print("Is not an instance of class Polygon !")
+            print("Not an instance of class Polygon !")
             return False
         
     def __ne__(self, other):
